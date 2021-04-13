@@ -14,7 +14,7 @@ interface Table
     /**
      * @return iterable<int, mixed>
      */
-    public function column(int|string $index): iterable;
+    public function column(int | string $index): iterable;
 
     /**
      * @return list<string>|null

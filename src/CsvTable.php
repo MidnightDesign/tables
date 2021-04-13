@@ -64,7 +64,7 @@ final class CsvTable implements Table
     /**
      * @return iterable<int, mixed>
      */
-    public function column(int|string $index): iterable
+    public function column(int | string $index): iterable
     {
         $columnIndex = $this->columnIndex($index);
         return $this->withFileHandle(
@@ -130,7 +130,7 @@ final class CsvTable implements Table
         );
     }
 
-    private function columnIndex(int|string $index): int
+    private function columnIndex(int | string $index): int
     {
         if (is_int($index)) {
             return $index;

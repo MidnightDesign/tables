@@ -6,5 +6,5 @@ namespace Midnight\Table;
 
 interface Record
 {
-    public function field(int|string $index): mixed;
+    public function field(int | string $index): mixed;
 }

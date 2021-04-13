@@ -12,7 +12,7 @@ use function is_string;
 final class ArrayRecord implements Record
 {
     /** @var array<string, int>|null */
-    private array |null $columnNameIndexes = null;
+    private array | null $columnNameIndexes = null;
 
     /**
      * @param list<mixed> $data
@@ -28,7 +28,7 @@ final class ArrayRecord implements Record
         $this->columnNameIndexes = array_flip($columnNames);
     }
 
-    public function field(int|string $index): mixed
+    public function field(int | string $index): mixed
     {
         if (is_string($index)) {
             if ($this->columnNameIndexes === null) {
