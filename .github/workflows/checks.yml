@@ -14,7 +14,7 @@ jobs:
         php: [ "8.0", "8.1" ]
         composer-options: [ "--prefer-lowest", "--prefer-stable" ]
 
-    name: PHP ${{ matrix.php }}, ${{ composer-options }}
+    name: PHP ${{ matrix.php }}, ${{ matrix.composer-options }}
 
     steps:
       - name: Checkout
