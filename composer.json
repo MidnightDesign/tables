@@ -1,0 +1,56 @@
+{
+    "name": "midnight/tables",
+    "description": "Tables/grids/data frames in PHP",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rudolph Gottesheim",
+            "email": "r.gottesheim@midnight-design.at"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "thecodingmachine/safe": "^1.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Midnight\\Table\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Midnight\\Table\\Test\\": "tests"
+        }
+    },
+    "require-dev": {
+        "infection/infection": "^0.21.5",
+        "phpstan/phpstan": "^0.12.83",
+        "vimeo/psalm": "^4.7",
+        "phpunit/phpunit": "^9.5",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-strict-rules": "^0.12.9",
+        "phpstan/phpstan-phpunit": "^0.12.18",
+        "psalm/plugin-phpunit": "^0.15.1",
+        "mikey179/vfsstream": "^1.6",
+        "maglnet/composer-require-checker": "^3.2",
+        "eventjet/coding-standard": "^3.6"
+    },
+    "scripts": {
+        "check": [
+            "@check-deps",
+            "@cs-check",
+            "@psalm",
+            "@phpstan",
+            "@phpunit",
+            "@infection"
+        ],
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "check-deps": "composer-require-checker",
+        "infection": "infection --min-msi=100 --min-covered-msi=100",
+        "phpstan": "phpstan",
+        "phpunit": "phpunit",
+        "psalm": "psalm"
+    }
+}
