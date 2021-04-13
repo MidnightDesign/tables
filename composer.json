@@ -32,7 +32,7 @@
         "phpstan/phpstan-strict-rules": "^0.12.9",
         "phpstan/phpstan-phpunit": "^0.12.18",
         "psalm/plugin-phpunit": "^0.15.1",
-        "mikey179/vfsstream": "^1.6",
+        "mikey179/vfsstream": "^1.6.7",
         "maglnet/composer-require-checker": "^3.2",
         "eventjet/coding-standard": "^3.6"
     },
