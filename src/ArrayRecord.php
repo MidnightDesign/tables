@@ -9,14 +9,18 @@ use LogicException;
 use function array_flip;
 use function is_string;
 
+/**
+ * @template T
+ * @implements Record<T>
+ */
 final class ArrayRecord implements Record
 {
     /** @var array<string, int>|null */
     private array | null $columnNameIndexes = null;
 
     /**
-     * @param list<mixed> $data
-     * @var list<mixed> $data
+     * @param list<T> $data
+     * @var list<T> $data
      * @param list<string>|null $columnNames
      */
     public function __construct(private array $data, ?array $columnNames = null)
@@ -28,6 +32,9 @@ final class ArrayRecord implements Record
         $this->columnNameIndexes = array_flip($columnNames);
     }
 
+    /**
+     * @return T
+     */
     public function field(int | string $index): mixed
     {
         if (is_string($index)) {

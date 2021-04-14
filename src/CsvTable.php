@@ -12,6 +12,9 @@ use function fgetcsv;
 use function is_array;
 use function is_int;
 
+/**
+ * @implements Table<string>
+ */
 final class CsvTable implements Table
 {
     private bool $hasHeader = false;
@@ -37,20 +40,21 @@ final class CsvTable implements Table
     }
 
     /**
-     * @return iterable<int, Record>
+     * @return iterable<int, Record<string>>
      */
     public function records(): iterable
     {
         return $this->withFileHandle(
         /**
          * @param resource $handle
-         * @return iterable<int, Record>
+         * @return iterable<int, Record<string>>
          */
             function ($handle): iterable {
                 if ($this->hasHeader) {
                     fgetcsv($handle);
                 }
                 while (true) {
+                    /** @var list<string>|false $row */
                     $row = fgetcsv($handle);
                     if ($row === false) {
                         break;
@@ -62,7 +66,7 @@ final class CsvTable implements Table
     }
 
     /**
-     * @return iterable<int, mixed>
+     * @return iterable<int, string>
      */
     public function column(int | string $index): iterable
     {
@@ -70,7 +74,7 @@ final class CsvTable implements Table
         return $this->withFileHandle(
         /**
          * @param resource $handle
-         * @return iterable<int, mixed>
+         * @return iterable<int, string>
          */
             function ($handle) use ($columnIndex): iterable {
                 if ($this->hasHeader) {

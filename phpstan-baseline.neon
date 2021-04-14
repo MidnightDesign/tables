@@ -1,7 +1,7 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Method Midnight\\\\Table\\\\Test\\\\ArrayRecordTest\\:\\:toArray\\(\\) should return array\\<K of \\(int\\|string\\), V\\> but returns array\\<V\\>\\.$#"
+			message: "#^Method Midnight\\\\Table\\\\Test\\\\TestUtil\\:\\:toArray\\(\\) should return array\\<K of \\(int\\|string\\), V\\> but returns array\\<V\\>\\.$#"
 			count: 1
-			path: tests/ArrayRecordTest.php
+			path: tests/TestUtil.php
 
